@@ -1,0 +1,44 @@
+
+#include "stdafx.h"
+#include <iostream>
+#include <conio.h>
+#include <math.h>
+using namespace std;
+double concatenar(int a, int b);
+
+void main(){
+int a,b;
+double c;
+
+cout<<"ingrese 1er numero";
+cin>>a;
+cout<<"ingrese 2do numero";
+cin>>b;
+c=concatenar(a,b);
+
+cout<<" su nuevo numero es"<<c;
+getch();
+}
+double contarDigitos(int a){
+  double cont;
+  while(a>0){
+  a=a/10;
+  cont++;
+  }
+  return cont; 
+}
+double concatenar(int a, int b){
+	double dig;
+	double c,aux=10;
+	if(a<b){ 
+		dig=contarDigitos(b);
+		c=(a*pow(aux,dig))+b;
+	}else{
+	     dig=contarDigitos(a);
+		c=b*pow(aux,dig);
+		c=c+a;
+	
+	}   
+	
+return c;          
+}
